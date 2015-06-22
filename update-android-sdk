@@ -1,0 +1,57 @@
+#!/bin/sh
+
+set -e
+
+sdk_dir=/opt/android-sdk
+
+. /usr/share/debconf/confmodule
+
+
+EXITCODE=0
+
+sdk_exit_with_error() {
+	echo "$1" >&2
+	echo "The files are NOT installed." >&2
+	echo "Please run 'dpkg-reconfigure android-sdk-installer' to perform the installation again" >&2
+	exit 1
+}
+
+license=android-sdk-eula
+
+db_get android-sdk-installer/accepted-$license || true
+if [ "$RET" != "true" ]; then
+    sdk_exit_with_error "user did not accept the $license license"
+fi
+
+
+for file in "$@";do
+	case "$(basename "$file")" in
+		tools_*) tools=$file ;;
+		android-*) platform=$file ;;
+		platform-tools_*) platform_tools=$file ;;
+		build-tools_*) build_tools=$file ;;
+		*) sdk_exit_with_error "Invalid argument: $file"
+	esac
+done
+
+# tools=tools_r24.3.3-linux.zip
+# platform=android-22_r02.zip
+# platform_tools=platform-tools_r22-linux.zip
+# build_tools=build-tools_r22.0.1-linux.zip
+
+build_tools_dir=$(echo $(basename $build_tools) | sed -e 's/[^_]*_r//' -e 's/-.*//')
+platform_dir=$(echo $(basename $platform) | sed 's/_.*//')
+
+cd $sdk_dir
+# unpack and move to correct locations
+unzip $tools
+unzip $platform_tools
+
+mkdir tmp
+cd tmp
+unzip -d platforms $platform
+mv * ../platforms/$platform_dir
+unzip -d build-tools $build_tools
+mv * ../build-tools/$build_tools_dir
+cd ..
+rmdir tmp

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+URLROOT = https://dl-ssl.google.com/android/repository
+
+export DH_VERBOSE=1
+
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/tmp/usr/share/package-data-downloads
+	while read sum file; do \
+		echo "Url: $(URLROOT)$$file"; \
+		echo "Sha256: $$sum"; \
+		echo ; \
+	done < zipfiles.sha256sums > debian/tmp/usr/share/package-data-downloads/android-sdk-installer
+	echo "Script: /usr/lib/android-sdk-installer/update-android-sdk" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
+	echo "Should-Download: android-sdk-installer/accepted-android-sdk-eula" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer

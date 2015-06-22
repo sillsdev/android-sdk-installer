@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+
+. /usr/share/debconf/confmodule
+
+while true; do
+    db_input medium android-sdk-installer/dldir || true
+    db_go
+    db_get android-sdk-installer/dldir
+    if [ -n "$RET" ] && [ -d "$RET" ];then
+        for file in $RET/*.zip;do
+            unzip -qqt "$file" || BADFILE=1
+            case "$(basename "$file")" in
+                tools_*) tools=$file ;;
+                android-*) platform=$file ;;
+                platform-tools_*) platform_tools=$file ;;
+                build-tools_*) build_tools=$file ;;
+            esac
+        done
+    fi
+    if $BADFILE || [ -z "$tools" ] || [ -z "$platform" ] || [ -z "$platform_tools" ] || [ -z "$build_tools" ];then
+        db_reset android-sdk-installer/baddldir || true
+        db_reset android-sdk-installer/dldir || true
+        db_input medium android-sdk-installer/baddldir || true
+        db_go
+    else
+        break
+    fi
+done

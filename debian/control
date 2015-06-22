@@ -1,0 +1,13 @@
+Source: android-sdk-installer
+Section: misc
+Priority: optional
+Maintainer: Chris Hubbard <chris_habbard@sil.org>
+Build-Depends: debhelper (>= 9.0.0)
+
+Package: android-sdk-installer
+Architecture: i386
+Depends: update-notifier-common (>= 0.119ubuntu2), ${misc:Depends},
+ libncurses5, libstdc++6, zlib1g
+Description: Installer for the Android SDK
+ This package will download the required files for the Android SDK and extract
+ them.

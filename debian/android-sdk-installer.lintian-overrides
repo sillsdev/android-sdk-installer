@@ -1,0 +1,3 @@
+android-sdk-installer: package-contains-empty-directory opt/android-sdk/platforms
+android-sdk-installer: package-contains-empty-directory opt/android-sdk/build-tools
+android-sdk-installer: debconf-is-not-a-registry usr/lib/android-sdk-installer/update-android-sdk
