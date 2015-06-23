@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
-URLROOT = https://dl-ssl.google.com/android/repository
+URLROOT = https://dl-ssl.google.com/android/repository/
+#URLROOT = http://localhost:8000/
 
 export DH_VERBOSE=1
 
