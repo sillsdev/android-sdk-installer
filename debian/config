@@ -10,6 +10,7 @@ while true; do
     db_go
     db_get android-sdk-installer/dldir
     if [ -n "$RET" ] && [ -d "$RET" ];then
+        BADFILE=0
         for file in $RET/*.zip;do
             unzip -qqt "$file" || BADFILE=1
             case "$(basename "$file")" in
@@ -19,13 +20,14 @@ while true; do
                 build-tools_*) build_tools=$file ;;
             esac
         done
-    fi
-    if $BADFILE || [ -z "$tools" ] || [ -z "$platform" ] || [ -z "$platform_tools" ] || [ -z "$build_tools" ];then
-        db_reset android-sdk-installer/baddldir || true
-        db_reset android-sdk-installer/dldir || true
-        db_input medium android-sdk-installer/baddldir || true
-        db_go
-    else
+        if [ ! $BADFILE ] && [ -n "$tools" ] && [ -n "$platform" ] && [ -n "$platform_tools" ] && [ -n "$build_tools" ];then
+            break
+        fi
+    elif [ -z "$RET" ];then
         break
     fi
+    db_reset android-sdk-installer/baddldir || true
+    db_reset android-sdk-installer/dldir || true
+    db_input medium android-sdk-installer/baddldir || true
+    db_go
 done
