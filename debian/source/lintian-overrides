@@ -1,0 +1,2 @@
+android-sdk-installer source: not-using-po-debconf
+android-sdk-installer source: untranslatable-debconf-templates
