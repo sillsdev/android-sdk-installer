@@ -6,7 +6,6 @@ Build-Depends: debhelper (>= 9.0.0)
 
 Package: android-sdk-installer
 Architecture: i386
-#Architecture: any
 Depends: update-notifier-common (>= 0.119ubuntu2), ${misc:Depends},
  libncurses5, libstdc++6, zlib1g, unzip
 Description: Installer for the Android SDK

@@ -34,7 +34,7 @@ mv "$scratch"/platforms/*  "$scratch/platforms/android-$apilevel"
 mv "$scratch"/build-tools/* "$scratch/build-tools/$build_tools_ver"
 
 # set permissions
-chmod -R a=g=o+rw "$scratch"
+chmod -R a=u "$scratch"
 mkdir -pm777 "$sdk_dir"
 
 # copy with hardlinks if possible to speed things up a lot
