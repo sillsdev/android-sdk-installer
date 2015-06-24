@@ -1,0 +1,2 @@
+android-sdk-installer: debconf-is-not-a-registry usr/lib/android-sdk-installer/install-android-sdk
+android-sdk-installer: too-long-extended-description-in-templates android-sdk-installer/present-android-sdk-eula

@@ -6,27 +6,16 @@ set -e
 db_get android-sdk-installer/dldir
 LOCALCOPY=$RET
 
-# FIXME: we don't have a way to use an alternate download source here.
-db_get android-sdk-installer/dlurl
-URLOVERRIDE=$RET
-
 stamp_file=/var/lib/update-notifier/package-data-downloads/android-sdk-installer
 
-if dpkg --compare-versions "$2" lt-nl 3.4ubuntu3 \
-   && [ -f /var/lib/android-sdk-installer/archives ]
-then
-	# don't force a redownload with the new hook
-	touch $stamp_file
-fi
-
-# if the license was not accepted, ensure the fonts are removed
+# if the license was not accepted, ensure the sdk is removed
 # and add README with helpful information
 SDKDIR=/opt/android-sdk
-mkdir -p $SDKDIR
 license=android-sdk-eula
 db_get android-sdk-installer/accepted-$license
 if [ "$RET" != "true" ]; then
   echo "user did not accept the $license license" >&2
+  mkdir -pm777 $SDKDIR -m 777
   rm -rf $SDKDIR/*
   cat > $SDKDIR/README <<EOF
 License refused.
@@ -41,7 +30,9 @@ else
 fi
 
 if ! [ -e $stamp_file ] && [ -n "$LOCALCOPY" ]; then
-	/usr/lib/android-sdk-installer/update-android-sdk "$LOCALCOPY"/*
+	/usr/lib/android-sdk-installer/install-android-sdk \
+	   "$LOCALCOPY"/tools* "$LOCALCOPY"/android* \
+           "$LOCALCOPY"/platform-tools* "$LOCALCOPY"/build-tools*
 	touch $stamp_file
 fi
 

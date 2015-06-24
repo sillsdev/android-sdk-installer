@@ -1,5 +1,5 @@
 #!/bin/sh
-# postrm script for msttcorefonts
+# postrm script for android-sdk-installer
 #
 # see: dh_installdeb(1)
 
@@ -25,7 +25,7 @@ case "$1" in
     ;;
     # this is handled here otherwise the old postinst is called
     # with abort-upgrade and this results in showing the generic
-    # update-ms-corefonts message (that is rather misleading)
+    # android-sdk-installer message (that is rather misleading)
     failed-upgrade|abort-install|abort-upgrade)
         exit 0
     ;;

@@ -2,23 +2,22 @@ Template: android-sdk-installer/dldir
 Type: string
 Description: Directory holding Android SDK downloads (if already downloaded):
  If you have already downloaded the Android SDK files, type the name of the
- directory which contains them. Those files are tools_r24.3.3-linux.zip,
- android-22_r02.zip, platform-tools_r22-linux.zip, and
- build-tools_r22.0.1-linux.zip.
+ directory which contains them. Those files are tools*.zip, android*.zip,
+ platform-tools*.zip, and build-tools*.zip. These four files should be in their
+ own directory.
  .
  If you haven't yet downloaded these files, leave this blank and the files
  will be downloaded for you. Approximately 400 MB will need to be downloaded.
  .
  If you are not connected to the internet or do not wish to download these
- fonts now, enter "none" to abort. 
+ files now, enter "none" to abort. 
 
 Template: android-sdk-installer/baddldir
 Type: error
 Description: Android SDK files not found
- The directory you entered either did not exist, did not contain the
- Android SDK files, or those files did not match the versions
- expected by this script.  Please re-enter the directory containing the
- files or enter "none" to abort.
+ The directory you entered either did not exist, did not contain the properly
+ named Android SDK files, or those files were corrupt.  Please re-enter the
+ directory containing the files or enter "none" to abort.
 
 Template: android-sdk-installer/present-android-sdk-eula
 Type: note
