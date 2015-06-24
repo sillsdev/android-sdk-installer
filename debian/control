@@ -3,9 +3,11 @@ Section: misc
 Priority: optional
 Maintainer: Chris Hubbard <chris_habbard@sil.org>
 Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 3.9.5
 
 Package: android-sdk-installer
 Architecture: i386
+Pre-Depends: ${misc:Pre-Depends}, debconf (>= 0.5) | debconf-2.0
 Depends: update-notifier-common (>= 0.119ubuntu2), ${misc:Depends},
  libncurses5, libstdc++6, zlib1g, unzip
 Description: Installer for the Android SDK
