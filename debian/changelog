@@ -1,3 +1,9 @@
+android-sdk-installer (1.0.0) stable; urgency=medium
+
+  * Ready to push to PSO-experimental
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Thu, 25 Jun 2015 15:46:29 -0400
+
 android-sdk-installer (0.0.1) stable; urgency=medium
 
   * Initial release.
