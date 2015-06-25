@@ -4,7 +4,7 @@ Debian package to download install the Android SDK.
 
 The default behavior is to download the required files from Google's Android software repository via HTTP.  You can download the files separately and then provide them to the installer package. Do the following:
 
-* On a network connected computer:
+* On a network connected computer, download 4 zip files (around 400 MB). 
 ```bash
 wget -i http://bit.ly/android-sdk-urls
 ```
