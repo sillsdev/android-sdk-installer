@@ -19,3 +19,11 @@ override_dh_auto_install:
 	echo "Script: /usr/lib/android-sdk-installer/install-android-sdk" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
 	echo "Should-Download: android-sdk-installer/accepted-android-sdk-eula" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
 	echo "Offline-Download-Dir: android-sdk-install/dldir" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
+	mkdir -p debian/tmp/usr/share/android-sdk-offline-downloader
+
+android_sdk_urls:
+	while read sum file; do \
+		echo "$(URLROOT)$$file"; \
+		echo ; \
+	done < zipfiles.sha256sums > android-sdk-urls.md
+
