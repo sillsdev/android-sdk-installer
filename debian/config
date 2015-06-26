@@ -9,7 +9,8 @@ while true; do
     db_input medium android-sdk-installer/dldir || true
     db_go
     db_get android-sdk-installer/dldir
-    if [ -n "$RET" ] && [ -d "$RET" ];then
+    if ( [ -n "$RET" ] && [ -d "$RET" ] ) || $AUTOSET;then
+        AUTOSET=false
 		tools="$RET"/tools*.zip
 		platform="$RET"/android*.zip
 		platform_tools="$RET"/platform-tools*.zip
