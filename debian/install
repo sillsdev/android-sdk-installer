@@ -1,2 +1,2 @@
 install-android-sdk			/usr/lib/android-sdk-installer
-usr/share/package-data-downloads
+android-sdk-urls.md			/usr/lib/android-sdk-installer

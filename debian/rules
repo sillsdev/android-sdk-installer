@@ -9,7 +9,7 @@ URLROOT = https://dl-ssl.google.com/android/repository/
 %:
 	dh $@
 
-override_dh_auto_install:
+override_dh_auto_install: android_sdk_urls
 	mkdir -p debian/tmp/usr/share/package-data-downloads
 	while read sum file; do \
 		echo "Url: $(URLROOT)$$file"; \

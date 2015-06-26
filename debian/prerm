@@ -6,10 +6,7 @@
 # but we're still successfully uninstalled.
 set -e
 
-rm -f /var/lib/update-notifier/package-data-downloads/android-sdk-installer.*
-
 if [ "$1" = "remove" ]; then
-	rm -f /var/lib/update-notifier/package-data-downloads/android-sdk-installer
 	rm -rf /opt/android-sdk
 fi
 

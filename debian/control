@@ -8,8 +8,7 @@ Standards-Version: 3.9.5
 Package: android-sdk-installer
 Architecture: i386
 Pre-Depends: ${misc:Pre-Depends}, debconf (>= 0.5) | debconf-2.0
-Depends: update-notifier-common (>= 0.119ubuntu2), ${misc:Depends},
- libncurses5, libstdc++6, zlib1g, unzip
+Depends: ${misc:Depends}, libncurses5, libstdc++6, zlib1g, unzip, wget
 Description: Installer for the Android SDK
  This package will download the required files for the Android SDK and extract
- them.
+ them, or install already downloaded SDK files.
