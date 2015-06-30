@@ -1,3 +1,18 @@
+android-sdk-installer (1.0.1) stable; urgency=medium
+
+  * Add 64-bit package
+  * Conditional dependencies based on distribution
+  * Support updates
+  * Delete downloaded zipfiles
+  * Only support certain versions
+    - The installer includes the list of urls that should be downloaded.
+      It is also checked in and accessible via bitly links (see README.md).
+      This is a way to make sure that a minimum version of the tools is
+      available for the app-builders.  If the files are downloaded, then
+      they have to match the expectations of the installer.
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Tue, 30 Jun 2015 10:48:31 -0400
+
 android-sdk-installer (1.0.0) stable; urgency=medium
 
   * Ready to push to PSO-experimental
