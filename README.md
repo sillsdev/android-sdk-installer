@@ -18,4 +18,5 @@ Later, when you want to install:
 ```bash
 echo android-sdk-installer android-sdk-installer/dldir string ~/Downloads/android-sdk-zips | sudo debconf-set-selections
 sudo apt-get install android-sdk-installer
+echo android-sdk-installer android-sdk-installer/dldir string | sudo debconf-set-selections
 ```
