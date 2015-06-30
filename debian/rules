@@ -1,13 +1,25 @@
 #!/usr/bin/make -f
 
+ARCH = $(shell arch)
+DIST = $(shell lsb_release -sr)
 URLROOT = https://dl-ssl.google.com/android/repository/
-#URLROOT = http://swd-bauson-nx.local:8000/
+#URLROOT = http://localhost:8000/
 
 #export DH_VERBOSE=1
 
+ifeq ($(ARCH), x86_64)
+ifeq ($(DIST), 12.04)
+SUBSTVARS = -Vdist:Depends="ia32-libs"
+else
+SUBSTVARS = -Vdist:Depends="libncurses5:i386, libstdc++6:i386, zlib1g:i386"
+endif
+endif
 
 %:
 	dh $@
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(SUBSTVARS)
 
 override_dh_auto_install:
 	while read file; do \
