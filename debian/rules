@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 URLROOT = https://dl-ssl.google.com/android/repository/
-#URLROOT = http://localhost:8000/
+#URLROOT = http://swd-bauson-nx.local:8000/
 
 #export DH_VERBOSE=1
 
@@ -9,21 +9,9 @@ URLROOT = https://dl-ssl.google.com/android/repository/
 %:
 	dh $@
 
-override_dh_auto_install: android_sdk_urls
-	mkdir -p debian/tmp/usr/share/package-data-downloads
-	while read sum file; do \
-		echo "Url: $(URLROOT)$$file"; \
-		echo "Sha256: $$sum"; \
-		echo ; \
-	done < zipfiles.sha256sums > debian/tmp/usr/share/package-data-downloads/android-sdk-installer
-	echo "Script: /usr/lib/android-sdk-installer/install-android-sdk" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
-	echo "Should-Download: android-sdk-installer/accepted-android-sdk-eula" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
-	echo "Offline-Download-Dir: android-sdk-install/dldir" >> debian/tmp/usr/share/package-data-downloads/android-sdk-installer
-	mkdir -p debian/tmp/usr/share/android-sdk-offline-downloader
-
-android_sdk_urls:
-	while read sum file; do \
+override_dh_auto_install:
+	while read file; do \
 		echo "$(URLROOT)$$file"; \
 		echo ; \
-	done < zipfiles.sha256sums > android-sdk-urls.md
+	done < zipfiles > android-sdk-urls.md
 
