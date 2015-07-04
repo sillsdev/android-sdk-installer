@@ -1,6 +1,6 @@
 # android-sdk-installer
 
-Debian package to download install the Android SDK.
+Debian package to download and install the Android SDK.
 
 The default behavior is to download the required files from Google's Android software repository via HTTP during the install.  You can download the files prior to installing the package and then provide them to the package at install time with the following instructions.
 
