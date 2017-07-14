@@ -4,5 +4,5 @@ https://dl-ssl.google.com/android/repository/android-22_r02.zip
 
 https://dl-ssl.google.com/android/repository/platform-tools_r25.0.3-linux.zip
 
-https://dl-ssl.google.com/android/repository/build-tools_r23.0.1-linux.zip
+https://dl-ssl.google.com/android/repository/build-tools_r25.0.3-linux.zip
 
