@@ -37,7 +37,7 @@ done
 # tools=tools_r25.2.4-linux.zip
 # platform=android-22_r02.zip
 # platform_tools=platform-tools_r25.0.3-linux.zip
-# build_tools=build-tools_r23.0.1-linux.zip
+# build_tools=build-tools_r25.0.3-linux.zip
 
 build_tools_dir=$(echo $(basename $build_tools) | sed -e 's/[^_]*_r//' -e 's/-.*//')
 platform_dir=$(echo $(basename $platform) | sed 's/_.*//')
