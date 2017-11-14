@@ -27,7 +27,7 @@ fi
 for file in "$@";do
 	case "$(basename "$file")" in
 		tools_*) tools=$file ;;
-		android-*) platform=$file ;;
+		platform-*) platform=$file ;;
 		platform-tools_*) platform_tools=$file ;;
 		build-tools_*) build_tools=$file ;;
 		*) sdk_exit_with_error "Invalid argument: $file"
@@ -35,9 +35,9 @@ for file in "$@";do
 done
 
 # tools=tools_r25.2.4-linux.zip
-# platform=android-22_r02.zip
-# platform_tools=platform-tools_r25.0.3-linux.zip
-# build_tools=build-tools_r25.0.3-linux.zip
+# platform=platform-26_r02.zip
+# platform_tools=platform-tools_r26.0.2-linux.zip
+# build_tools=build-tools_r26.0.3-linux.zip
 
 build_tools_dir=$(echo $(basename $build_tools) | sed -e 's/[^_]*_r//' -e 's/-.*//')
 platform_dir=$(echo $(basename $platform) | sed 's/_.*//')
