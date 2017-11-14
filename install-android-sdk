@@ -10,7 +10,7 @@ platform_tools=$3
 build_tools=$4
 
 case "$(basename "$tools")"          in tools*);; *) echo "invalid tools file $tools"; exit 1;; esac
-case "$(basename "$platform")"       in android*);; *) echo "invalid platform file $platform";exit 1;; esac
+case "$(basename "$platform")"       in platform*);; *) echo "invalid platform file $platform";exit 1;; esac
 case "$(basename "$platform_tools")" in platform-tools*);; *) echo "invalid platform-tools file $platform_tools";exit 1;; esac
 case "$(basename "$build_tools")"    in build-tools*);; *) echo "invalid build-tools file $build_tools";exit 1;; esac
 
