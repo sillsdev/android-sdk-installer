@@ -1,3 +1,18 @@
+android-sdk-installer (1.5ubuntu1) stable; urgency=medium
+
+  * Update platform to 28_r06
+  * Update platform-tools to r28.0.1
+  * Update build-tools to r28.0.3
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Thu, 04 Apr 2019 10:39:42 -0400
+
+android-sdk-installer (1.4ubuntu1) stable; urgency=medium
+
+  * Update build-tools to r27.0.3
+  * Update tools to 25.2.5
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Thu, 26 Apr 2018 10:57:55 -0400
+
 android-sdk-installer (1.3ubuntu1) stable; urgency=medium
 
   * Update platform to 26_r02

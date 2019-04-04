@@ -19,3 +19,7 @@ echo android-sdk-installer android-sdk-installer/dldir string ~/Downloads/androi
 sudo apt-get install android-sdk-installer
 echo android-sdk-installer android-sdk-installer/dldir string | sudo debconf-set-selections
 ```
+## Building the Debian Package
+
+* debuild -i -us -uc -S
+* pbuilder
