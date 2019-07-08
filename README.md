@@ -21,5 +21,5 @@ echo android-sdk-installer android-sdk-installer/dldir string | sudo debconf-set
 ```
 ## Building the Debian Package
 
-* debuild -i -us -uc -S
-* pbuilder
+* `gradle`
+* `sudo ~/pbuilder/build-multi-sh output/\*.dsc`

@@ -1,0 +1,46 @@
+apply plugin: 'base'
+
+def installDir = 'android-sdk-installer'
+defaultTasks 'clean', 'debsrcInstaller'
+
+task cleanInstaller(type: Delete) {
+	delete "output" 
+	println "output"
+	delete fileTree('.') { include '*.log' }
+	println "log files"
+}
+
+clean.dependsOn cleanInstaller
+
+task tarInstaller(type: Tar) {
+	destinationDir = file("output")
+	compression = Compression.GZIP
+	from (".") {
+		exclude 'README.md'
+		exclude 'build.gradle'
+		exclude 'output'
+		exclude '.gradle'
+		exclude 'build-multi.config'
+	}
+	baseName = installDir
+}
+
+task debPrepareInstaller(dependsOn: tarInstaller) {
+	doLast {
+		String destDir = "output/${installDir}"
+		copy { 
+			from tarTree(tarInstaller.archivePath)
+			into destDir
+		}
+	}
+}
+
+task debsrcInstaller(dependsOn: debPrepareInstaller) {
+	doLast {
+		String destDir = "output/${installDir}"
+		exec {
+			workingDir destDir
+			commandLine 'debuild', '-i', '-us', '-uc', '-S'
+		}
+	}
+}

@@ -3,3 +3,5 @@ debian/*.debhelper.log
 debian/*.substvars
 debian/*.debhelper
 debian/android-sdk-installer
+.gradle/
+output/
