@@ -1,3 +1,17 @@
+android-sdk-installer (1.5ubuntu4) stable; urgency=medium
+
+  * Update build procedure
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Mon, 08 Jul 2019 12:57:31 -0400
+
+android-sdk-installer (1.5ubuntu3) stable; urgency=medium
+
+  * Remove dependency on default-jre and default-jdk and
+    use explicit dependency on openjdk-8 (so openjdk-11 is
+    not installed)
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Fri, 05 Jul 2019 17:16:25 -0400
+
 android-sdk-installer (1.5ubuntu1) stable; urgency=medium
 
   * Update platform to 28_r06
