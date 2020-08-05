@@ -1,3 +1,21 @@
+android-sdk-installer (1.7ubuntu1) stable; urgency=medium
+
+  * Update for Android 10 requirement
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Wed, 05 Aug 2020 12:19:18 -0400
+
+android-sdk-installer (1.6ubuntu2) stable; urgency=medium
+
+  * Correct the versions needed by App Builders 7.1
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Fri, 19 Jun 2020 00:50:06 -0400
+
+android-sdk-installer (1.6ubuntu1) stable; urgency=medium
+
+  * Update all zip file versions
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Thu, 18 Jun 2020 22:48:09 -0400
+
 android-sdk-installer (1.5ubuntu4) stable; urgency=medium
 
   * Update build procedure
