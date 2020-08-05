@@ -26,7 +26,7 @@ fi
 
 for file in "$@";do
 	case "$(basename "$file")" in
-		tools_*) tools=$file ;;
+		sdk-tools-*) tools=$file ;;
 		platform-*) platform=$file ;;
 		platform-tools_*) platform_tools=$file ;;
 		build-tools_*) build_tools=$file ;;
