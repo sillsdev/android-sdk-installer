@@ -10,8 +10,8 @@ while true; do
     db_go
     db_get android-sdk-installer/dldir
     if [ -n "$RET" ] && [ -d "$RET" ];then
-		tools="$RET"/tools*.zip
-		platform="$RET"/android*.zip
+		tools="$RET"/sdk-tools*.zip
+		platform="$RET"/platform-[0-9]*.zip
 		platform_tools="$RET"/platform-tools*.zip
 		build_tools="$RET"/build-tools*.zip
 		echo tools: $tools
