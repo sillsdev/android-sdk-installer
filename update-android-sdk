@@ -26,7 +26,7 @@ fi
 
 for file in "$@";do
 	case "$(basename "$file")" in
-		sdk-tools-*) tools=$file ;;
+		commandlinetools-*) tools=$file ;;
 		platform-*) platform=$file ;;
 		platform-tools_*) platform_tools=$file ;;
 		build-tools_*) build_tools=$file ;;
@@ -34,10 +34,10 @@ for file in "$@";do
 	esac
 done
 
-# tools=tools_r25.2.4-linux.zip
-# platform=platform-26_r02.zip
-# platform_tools=platform-tools_r26.0.2-linux.zip
-# build_tools=build-tools_r26.0.3-linux.zip
+# tools=commandlinetools-linux-8092744_latest.zip
+# platform=platform-31_r01.zip
+# platform_tools=platform-tools_r32.0.0-linux.zip
+# build_tools=build-tools_r32-linux.zip
 
 build_tools_dir=$(echo $(basename $build_tools) | sed -e 's/[^_]*_r//' -e 's/-.*//')
 platform_dir=$(echo $(basename $platform) | sed 's/_.*//')

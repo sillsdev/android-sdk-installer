@@ -9,14 +9,14 @@ platform=$2
 platform_tools=$3
 build_tools=$4
 
-case "$(basename "$tools")"          in sdk-tools*);; *) echo "invalid tools file $tools"; exit 1;; esac
+case "$(basename "$tools")"          in commandlinetools*);; *) echo "invalid command line tools file $tools"; exit 1;; esac
 case "$(basename "$platform")"       in platform*);; *) echo "invalid platform file $platform";exit 1;; esac
 case "$(basename "$platform_tools")" in platform-tools*);; *) echo "invalid platform-tools file $platform_tools";exit 1;; esac
 case "$(basename "$build_tools")"    in build-tools*);; *) echo "invalid build-tools file $build_tools";exit 1;; esac
 
 # extract needed info from zips
-apilevel=$(unzip -p "$platform" '*/source.properties' | sed -n 's/^AndroidVersion\.ApiLevel=//p')
-build_tools_ver=$(unzip -p "$build_tools" '*/source.properties' | sed -n 's/^Pkg\.Revision=//p')
+apilevel=$(unzip -p "$platform" '*/source.properties' | sed -n 's/.*ApiLevel=//p')
+build_tools_ver=$(unzip -p "$build_tools" '*/source.properties' | sed -n 's/.*Revision=//p')
 
 # Some of this seems overly complex, but it's so that this script can update as
 # well as install from scratch. It creates a working SDK directory with proper
