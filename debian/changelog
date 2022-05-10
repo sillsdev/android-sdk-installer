@@ -1,3 +1,9 @@
+android-sdk-installer (1.8ubuntu1) stable; urgency=medium
+
+  * Update for Android 11 requirement
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Mon, 02 Aug 2021 09:06:27 -0400
+
 android-sdk-installer (1.7ubuntu2) stable; urgency=medium
 
   * Fix offline installation
