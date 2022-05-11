@@ -9,6 +9,7 @@ platform=$2
 platform_tools=$3
 build_tools=$4
 
+# if these patterns change, then update config as well
 case "$(basename "$tools")"          in commandlinetools*);; *) echo "invalid command line tools file $tools"; exit 1;; esac
 case "$(basename "$platform")"       in platform*);; *) echo "invalid platform file $platform";exit 1;; esac
 case "$(basename "$platform_tools")" in platform-tools*);; *) echo "invalid platform-tools file $platform_tools";exit 1;; esac
