@@ -8,7 +8,7 @@ Standards-Version: 3.9.5
 Package: android-sdk-installer
 Architecture: i386 amd64
 Pre-Depends: debconf (>= 0.5) | debconf-2.0
-Depends: ${misc:Depends}, ${dist:Depends}, unzip, wget, openjdk-8-jre, openjdk-8-jdk
+Depends: ${misc:Depends}, ${dist:Depends}, unzip, wget, openjdk-11-jre, openjdk-11-jdk
 Description: Installer for the Android SDK
  This package will download the required files for the Android SDK and extract
  them, or install already downloaded SDK files.
