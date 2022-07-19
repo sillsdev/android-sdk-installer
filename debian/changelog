@@ -1,3 +1,9 @@
+android-sdk-installer (1.9ubuntu4) stable; urgency=medium
+
+  * 1.9 Release
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Mon, 18 Jul 2022 14:31:23 -0400
+
 android-sdk-installer (1.9ubuntu3) stable; urgency=medium
 
   * Update offline install
