@@ -1,3 +1,9 @@
+android-sdk-installer (1.9ubuntu5) stable; urgency=medium
+
+  * Fix version number detection
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Fri, 16 Sep 2022 09:38:59 -0400
+
 android-sdk-installer (1.9ubuntu4) stable; urgency=medium
 
   * 1.9 Release
