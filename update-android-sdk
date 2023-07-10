@@ -34,10 +34,10 @@ for file in "$@";do
 	esac
 done
 
-# tools=commandlinetools-linux-8092744_latest.zip
-# platform=platform-31_r01.zip
-# platform_tools=platform-tools_r32.0.0-linux.zip
-# build_tools=build-tools_r32-linux.zip
+# tools=commandlinetools-linux-9477386_latest.zip
+# platform=platform-33_r02.zip
+# platform_tools=platform-tools_r34.0.3-linux.zip
+# build_tools=build-tools_r34-linux.zip
 
 build_tools_dir=$(echo $(basename $build_tools) | sed -e 's/[^_]*_r//' -e 's/-.*//')
 platform_dir=$(echo $(basename $platform) | sed 's/_.*//')

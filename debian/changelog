@@ -1,3 +1,9 @@
+android-sdk-installer (1.11ubuntu1) stable; urgency=medium
+
+  * 1.11 Release for AppBuilders 11
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Mon, 10 Jul 2023 11:21:05 -0400
+
 android-sdk-installer (1.9ubuntu5) stable; urgency=medium
 
   * Fix version number detection

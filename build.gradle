@@ -13,7 +13,7 @@ task cleanInstaller(type: Delete) {
 clean.dependsOn cleanInstaller
 
 task tarInstaller(type: Tar) {
-	destinationDir = file("output")
+	destinationDirectory = file("output")
 	compression = Compression.GZIP
 	from (".") {
 		exclude 'README.md'
@@ -22,7 +22,7 @@ task tarInstaller(type: Tar) {
 		exclude '.gradle'
 		exclude 'build-multi.config'
 	}
-	baseName = installDir
+	archiveBaseName = installDir
 }
 
 task debPrepareInstaller(dependsOn: tarInstaller) {
