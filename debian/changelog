@@ -1,3 +1,15 @@
+android-sdk-installer (1.13ubuntu2) stable; urgency=medium
+
+  * Use Android-35
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Thu, 31 Jul 2025 14:39:04 -0400
+
+android-sdk-installer (1.13ubuntu1) stable; urgency=medium
+
+  * 1.13 Release for AppBuilders 13.0
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Thu, 31 Jul 2025 13:27:02 -0400
+
 android-sdk-installer (1.12ubuntu2) stable; urgency=medium
 
   * Don't need to rename platform/android-*

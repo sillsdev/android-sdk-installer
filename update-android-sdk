@@ -35,9 +35,9 @@ for file in "$@";do
 done
 
 # tools=commandlinetools-linux-11076708_latest.zip
-# platform=platform-34-ext7_r03.zip
-# platform_tools=platform-tools_r34.0.3-linux.zip
-# build_tools=build-tools_r34-linux.zip
+# platform=platform-35_r02.zip
+# platform_tools=platform-tools_r36.0.0-linux.zip
+# build_tools=build-tools_r35.0.1_linux.zip
 
 build_tools_dir=$(echo $(basename $build_tools) | sed -e 's/[^_]*_r//' -e 's/-.*//')
 platform_dir=$(echo $(basename $platform) | sed 's/_.*//')
