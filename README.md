@@ -39,7 +39,6 @@ echo android-sdk-installer android-sdk-installer/dldir string | sudo debconf-set
 Since the binary is identical across distributions, you can upload the same build to multiple repositories:
 ```bash
 # Upload the same package to different distribution pockets
-dput -U pso:ubuntu/focal output/android-sdk-installer_*_source.changes
 dput -U pso:ubuntu/jammy output/android-sdk-installer_*_source.changes
 dput -U pso:ubuntu/noble output/android-sdk-installer_*_source.changes
 ```

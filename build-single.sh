@@ -5,7 +5,7 @@
 source build-multi.config 2>/dev/null || true
 
 ARCH=${ARCHES:-amd64}
-DIST=${DIST:-jammy}  # Default to jammy, but could be any of focal/jammy/noble
+DIST=${DIST:-jammy}  # Default to jammy, but could be any of jammy/noble
 BUILDDIR=${BUILDDIR:-output}
 
 echo "Building distribution-agnostic package..."
@@ -39,7 +39,6 @@ if [ $? -eq 0 ]; then
     echo "Since the package is now distribution-agnostic, you can upload"
     echo "this single build to multiple distribution repositories:"
     echo ""
-    echo "  dput -U pso:ubuntu/focal $BUILDDIR/*_source.changes"
     echo "  dput -U pso:ubuntu/jammy $BUILDDIR/*_source.changes"  
     echo "  dput -U pso:ubuntu/noble $BUILDDIR/*_source.changes"
 else

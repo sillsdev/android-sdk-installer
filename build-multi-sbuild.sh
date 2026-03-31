@@ -5,7 +5,7 @@
 source build-multi.config
 
 # Default values if not set in config
-DISTRIBUTIONS=${DISTRIBUTIONS:-focal jammy noble}
+DISTRIBUTIONS=${DISTRIBUTIONS:-jammy noble}
 ARCHES=${ARCHES:-amd64}
 BUILDDIR=${BUILDDIR:-output}
 
