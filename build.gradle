@@ -43,7 +43,7 @@ task debsrcInstaller(dependsOn: debPrepareInstaller) {
 		def execOps = project.services.get(ExecOperations)
 		execOps.exec {
 			workingDir destDir
-			commandLine 'debuild', '-i', '-us', '-uc', '-S'
+			commandLine 'debuild', '-i', '-us', '-uc', '-S', '--lintian-opts', '--suppress-tags', 'bad-distribution-in-changes-file'
 		}
 	}
 }
