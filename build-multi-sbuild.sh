@@ -31,9 +31,9 @@ for DIST in $DISTRIBUTIONS; do
         sbuild \
             --arch=$ARCH \
             --dist=$DIST \
-            --build-dir=$BUILDDIR \
             --purge-build=successful \
             --purge-deps=successful \
+            --no-run-lintian \
             $DSC_FILE
             
         if [ $? -eq 0 ]; then
