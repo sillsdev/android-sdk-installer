@@ -1,3 +1,9 @@
+android-sdk-installer (1.36+ubuntu1) stable; urgency=medium
+
+  * Release 1.36
+
+ -- Chris Hubbard <chris_hubbard@sil.org>  Mon, 30 Mar 2026 22:35:12 -0400
+
 android-sdk-installer (1.13ubuntu2) stable; urgency=medium
 
   * Use Android-35
