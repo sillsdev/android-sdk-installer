@@ -15,7 +15,7 @@ for DIST in $DISTRIBUTIONS; do
     for ARCH in $ARCHES; do
         echo "Creating chroot for $DIST-$ARCH..."
         sudo sbuild-createchroot \
-            --include=eatmydata,ccache,gnupg \
+            --include=eatmydata,gnupg \
             $DIST \
             /srv/chroot/$DIST-$ARCH-sbuild \
             http://archive.ubuntu.com/ubuntu/
