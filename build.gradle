@@ -1,5 +1,7 @@
 apply plugin: 'base'
 
+import org.gradle.process.ExecOperations
+
 def installDir = 'android-sdk-installer'
 defaultTasks 'clean', 'debsrcInstaller'
 
@@ -29,7 +31,7 @@ task debPrepareInstaller(dependsOn: tarInstaller) {
 	doLast {
 		String destDir = "output/${installDir}"
 		copy { 
-			from tarTree(tarInstaller.archivePath)
+			from tarTree(tarInstaller.archiveFile.get().asFile)
 			into destDir
 		}
 	}
@@ -38,7 +40,8 @@ task debPrepareInstaller(dependsOn: tarInstaller) {
 task debsrcInstaller(dependsOn: debPrepareInstaller) {
 	doLast {
 		String destDir = "output/${installDir}"
-		exec {
+		def execOps = project.services.get(ExecOperations)
+		execOps.exec {
 			workingDir destDir
 			commandLine 'debuild', '-i', '-us', '-uc', '-S'
 		}
