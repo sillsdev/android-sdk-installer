@@ -21,5 +21,20 @@ echo android-sdk-installer android-sdk-installer/dldir string | sudo debconf-set
 ```
 ## Building the Debian Package
 
-* `gradle`
-* `sudo ~/pbuilder/build-multi-sh output/\*.dsc`
+### Setup (one-time)
+* Install and configure sbuild: `./sbuild-setup.sh`
+* Log out and back in (for group membership changes)
+
+### Building
+
+**Single package build**: Since the package is now distribution-agnostic:
+* `gradle` (generates source package)
+* `./build-single.sh` (builds once, works for all distributions)
+
+### Uploading to multiple distributions
+Since the binary is identical across distributions, you can upload the same build to multiple repositories:
+```bash
+# Upload the same package to different distribution pockets
+dput -U pso:ubuntu/jammy output/android-sdk-installer_*_source.changes
+dput -U pso:ubuntu/noble output/android-sdk-installer_*_source.changes
+```

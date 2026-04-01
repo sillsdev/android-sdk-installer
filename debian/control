@@ -2,8 +2,8 @@ Source: android-sdk-installer
 Section: misc
 Priority: optional
 Maintainer: Chris Hubbard <chris_habbard@sil.org>
-Build-Depends: debhelper (>= 9.0.0)
-Standards-Version: 3.9.5
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.6.0
 
 Package: android-sdk-installer
 Architecture: i386 amd64

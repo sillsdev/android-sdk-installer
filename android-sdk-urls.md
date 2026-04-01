@@ -1,7 +1,7 @@
-https://dl-ssl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
+https://dl-ssl.google.com/android/repository/commandlinetools-linux-14742923_latest.zip
 
-https://dl-ssl.google.com/android/repository/platform-35_r02.zip
+https://dl-ssl.google.com/android/repository/platform-36_r02.zip
 
-https://dl-ssl.google.com/android/repository/platform-tools_r36.0.0-linux.zip
+https://dl-ssl.google.com/android/repository/platform-tools_r37.0.0-linux.zip
 
-https://dl-ssl.google.com/android/repository/build-tools_r35.0.1_linux.zip
+https://dl-ssl.google.com/android/repository/build-tools_r36.1_linux.zip

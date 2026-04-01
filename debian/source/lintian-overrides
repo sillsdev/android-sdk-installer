@@ -1,2 +1,4 @@
 android-sdk-installer source: not-using-po-debconf
 android-sdk-installer source: untranslatable-debconf-templates
+# We intentionally use "stable" as a distribution-agnostic suite name
+android-sdk-installer: bad-distribution-in-changes-file stable
