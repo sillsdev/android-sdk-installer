@@ -8,7 +8,7 @@ sudo apt-get install sbuild schroot debootstrap
 sudo adduser $USER sbuild
 
 # Create build chroots for your target distributions
-DISTRIBUTIONS="jammy noble"
+DISTRIBUTIONS="noble"
 ARCHES="amd64"
 
 for DIST in $DISTRIBUTIONS; do
